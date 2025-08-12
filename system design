@@ -1,0 +1,26 @@
+# System Analysis and Design Portfolio
+
+This repository showcases my projects and assignments from the System Analysis and Design course, demonstrating my understanding of system modeling and communication with various stakeholders.
+## Course Overview and Learning
+
+Through this course, I've gained practical experience in several key areas of system analysis and design, including:
+
+* **Effective Communication:** Learning to articulate complex technical designs to both technical and non-technical audiences.
+* **UML Diagrams:** Proficiency in creating and interpreting various Unified Modeling Language (UML) diagrams, such as Use Case, Sequence, and Class diagrams.
+* **System Development Life Cycle (SDLC):** Understanding the phases and methodologies involved in building information systems.
+## Projects and Artifacts.
+
+This portfolio primarily focuses on a system design project for an **online retail business**. The repository contains the following artifacts, which illustrate different aspects of the system:
+
+* **UML Use Case Diagram:** This diagram visually represents the primary functions of the retail system (e.g., ordering goods, selling items) and identifies the main users (Retailer, Customer, Supplier).
+* **UML Sequence Diagram:** This diagram details the step-by-step interactions between different parts of the system and its users, such as the sequence of events that occur from ordering goods to supplying them to a customer.
+* **UML Class Diagram:** This diagram provides a structured view of the system's key entities (e.g., Goods, Customer, Supplier, Retailer) and their relationships, along with their attributes and behaviors.
+* **Client Presentation:** A non-technical explanation of the system design, specifically tailored for a business owner, demonstrating effective communication skills.
+## Viewing My Work
+
+Feel free to explore the different diagram files and the presentation document to understand my approach to system analysis and design.
+
+## Contact
+
+Frank Arroyo
+frank.arroyo@snhu.edu
