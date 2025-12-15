@@ -1,0 +1,66 @@
+package appointments;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class AppointmentServiceTest {
+
+    private Date futureDate() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_YEAR, 2);
+        return cal.getTime();
+    }
+
+    @Test
+    void addAndGetAppointment() {
+        AppointmentService service = new AppointmentService();
+        Appointment a = new Appointment("A1", futureDate(), "Desc");
+        service.addAppointment(a);
+        Appointment fetched = service.getAppointment("A1");
+        assertNotNull(fetched);
+        assertEquals("Desc", fetched.getDescription());
+    }
+
+    @Test
+    void duplicateIdThrows() {
+        AppointmentService service = new AppointmentService();
+        service.addAppointment(new Appointment("A1", futureDate(), "Desc"));
+        assertThrows(IllegalArgumentException.class,
+            () -> service.addAppointment(new Appointment("A1", futureDate(), "Other")));
+    }
+
+    @Test
+    void deleteAppointmentRemovesIt() {
+        AppointmentService service = new AppointmentService();
+        service.addAppointment(new Appointment("A1", futureDate(), "Desc"));
+        service.deleteAppointment("A1");
+        assertNull(service.getAppointment("A1"));
+    }
+
+    @Test
+    void updateFieldsViaService() {
+        AppointmentService service = new AppointmentService();
+        Appointment a = new Appointment("A1", futureDate(), "Desc");
+        service.addAppointment(a);
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_YEAR, 3);
+        Date newDate = cal.getTime();
+
+        service.updateDescription("A1", "NewDesc");
+        service.updateDate("A1", newDate);
+
+        Appointment fetched = service.getAppointment("A1");
+        assertEquals("NewDesc", fetched.getDescription());
+        assertEquals(newDate, fetched.getAppointmentDate());
+    }
+
+    @Test
+    void updateNonexistentThrows() {
+        AppointmentService service = new AppointmentService();
+        assertThrows(IllegalArgumentException.class, () -> service.updateDescription("X", "NewDesc"));
+    }
+}
