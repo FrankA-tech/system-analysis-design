@@ -1,0 +1,74 @@
+ackage appointments;
+
+import java.util.Date;
+import java.util.Objects;
+
+public class Appointment {
+    private final String appointmentId;
+    private Date appointmentDate;
+    private String description;
+
+    public Appointment(String appointmentId, Date appointmentDate, String description) {
+        validateId(appointmentId);
+        validateDate(appointmentDate);
+        validateDescription(description);
+
+        this.appointmentId = appointmentId;
+        this.appointmentDate = appointmentDate;
+        this.description = description;
+    }
+
+    private void validateId(String id) {
+        if (id == null || id.length() > 10) {
+            throw new IllegalArgumentException("appointmentId must be non-null and <= 10 chars");
+        }
+    }
+
+    private void validateDate(Date date) {
+        if (date == null) throw new IllegalArgumentException("appointmentDate cannot be null");
+        Date now = new Date();
+        if (date.before(now)) {
+            throw new IllegalArgumentException("appointmentDate cannot be in the past");
+        }
+    }
+
+    private void validateDescription(String description) {
+        if (description == null || description.length() > 50) {
+            throw new IllegalArgumentException("description must be non-null and <= 50 chars");
+        }
+    }
+
+    public String getAppointmentId() {
+        return appointmentId;
+    }
+
+    public Date getAppointmentDate() {
+        return appointmentDate;
+    }
+
+    public void setAppointmentDate(Date appointmentDate) {
+        validateDate(appointmentDate);
+        this.appointmentDate = appointmentDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        validateDescription(description);
+        this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Appointment)) return false;
+        Appointment other = (Appointment) o;
+        return Objects.equals(appointmentId, other.appointmentId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(appointmentId);
+    }
+)
