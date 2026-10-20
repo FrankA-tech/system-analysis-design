@@ -15,3 +15,10 @@ Throughout the development lifecycle, overcoming technical hurdles required inno
 
 Areas of Success
 The mobile app successfully demonstrated core competencies in full-stack mobile development, specifically through the seamless integration of frontend layout designs with secure backend data handling. The robust implementation of user authentication and data management components highlighted an ability to deliver production-ready software solutions that meet both functional and user-centered design standards.
+
+
+Project Overview
+For this project, I worked on developing an intelligent pirate non-player character agent for a treasure hunt game using reinforcement learning principles. The starter code provided the foundational environment, game grid setup, state space definitions, action spaces, and visualization tools to render the pirate moving through the environment. My responsibility was to write the core Q-learning training algorithm, define the reward structures, implement the policy for exploration versus exploitation, and ensure the agent successfully learned an optimal path to find the treasure while avoiding hazards.
+
+Connecting Learning to Computer Science
+Computer scientists design, develop, and optimize software systems and computational algorithms to solve complex, real-world problems. This work matters because computing touches nearly every aspect of modern society, from healthcare and finance to automation and entertainment, driving innovation and improving efficiency. Approaching a problem as a computer scientist means breaking down complex, ambiguous challenges into modular, logical components, analyzing constraints, designing algorithms, and iteratively testing and debugging solutions until they perform reliably. Furthermore, computer scientists carry significant ethical responsibilities toward end users and organizations, including protecting user privacy, ensuring transparency and fairness in algorithmic models, avoiding bias in training data, and maintaining security standards to prevent harm.
