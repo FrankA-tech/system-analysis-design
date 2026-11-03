@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/FrankA-tech/system-analysis-design#readme",
   "dependencies": {
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "hbs": "^4.4.0"
   }
 }
